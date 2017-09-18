@@ -1,60 +1,59 @@
 //bio information
 
 let bio = {
-    'name' : 'Nicole Irene',
-    'role' : 'Front End Gladiator',
-    'contacts' : {
-          'mobile': '0123456789',
-          'email': 'nicoleirene89@gmail.com', 
-          'github': 'github.com/NicoleIrene',
-          'twitter': '@NicoleIrene',
-          'location': 'New York City',
-    },
+  'name' : 'Nicole Irene',
+  'role' : 'Front End Gladiator',
+  'contacts' : {
+    'mobile': '0123456789',
+    'email': 'nicoleirene89@gmail.com', 
+    'github': 'github.com/NicoleIrene',
+    'twitter': '@NicoleIrene',
+    'location': 'New York City',
+  },
+  'welcomeMessage': 'Some days, you just have to create your own sunshine.',
+  'skills': ['HTML5', 'CSS3', 'JavaScript', 'Wordpress'],
+  'biopic': 'images/me.jpg'
+}
 
-    'welcomeMessage': 'Some days, you just have to create your own sunshine.',
-    'skills': ['HTML5', 'CSS3', 'JavaScript', 'Wordpress'],
-    'biopic': 'images/me.jpg'
-  };
-  
 //bio funtion to display information
 
 bio.display=function(){
-  let formattedName = HTMLheaderName.replace('%data%', bio.name);
-  $('#header').prepend(formattedName);
+let formattedName = HTMLheaderName.replace('%data%', bio.name);
+$('#header').prepend(formattedName);
 
-  let formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-  $('#header').prepend(formattedRole);
+let formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+$('#header').prepend(formattedRole);
 
-  let formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-  $('#topContacts').append(formattedMobile);
-  $('#footerContacts').append(formattedMobile);
+let formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+$('#topContacts').append(formattedMobile);
+$('#footerContacts').append(formattedMobile);
 
-  let formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-  $('#topContacts').append(formattedEmail);
-  $('#footerContacts').append(formattedEmail);
+let formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+$('#topContacts').append(formattedEmail);
+$('#footerContacts').append(formattedEmail);
 
-  let formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
-  $('#topContacts').append(formattedGithub);
-  $('#footerContacts').append(formattedGithub);
+let formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
+$('#topContacts').append(formattedGithub);
+$('#footerContacts').append(formattedGithub);
 
-  let formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
-  $('#topContacts').append(formattedTwitter);
-  $('#footerContacts').append(formattedTwitter);
+let formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
+$('#topContacts').append(formattedTwitter);
+$('#footerContacts').append(formattedTwitter);
 
-  let formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
-  $('#topContacts').append(formattedLocation);
-  $('#footerContacts').append(HTMLlocation);
+let formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+$('#topContacts').append(formattedLocation);
+$('#footerContacts').append(formattedLocation);
 
-  let formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
-  $('#header').prepend(formattedWelcomeMsg);
+let formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
+$('#header').prepend(formattedWelcomeMsg);
 
-  let formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
-  $('#header').prepend(formattedBioPic);
+let formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
+$('#header').prepend(formattedBioPic);
 
-  if(bio.skills.length > 0) {
-  $('header').append(HTMLskillsStart);
+if(bio.skills.length > 0) {
+$('header').append(HTMLskillsStart);
 
-  let formattedSkill = HTMLskills.replace('%data%', bio.skills[0]);
+let formattedSkill = HTMLskills.replace('%data%', bio.skills[0]);
   $('#skills').append(formattedSkill);
   formattedSkill = HTMLskills.replace('%data%', bio.skills[1]);
   $('#skills').append(formattedSkill);
@@ -62,97 +61,56 @@ bio.display=function(){
   $('#skills').append(formattedSkill);
   formattedSkill = HTMLskills.replace('%data%', bio.skills[3]);
   $('skills').append(formattedSkill);
-  
+
   }
 
 
 };
 bio.display(); //end of bio function
 
-//how to append HTMLskillsStart?
-
-
-//education information
-
 let education = {
-      'schools': [{
-        'name': 'Queens College at The City University of New York',
-        'location': 'Flushing, NY',
-        'degree': 'Bachelor of Arts',
-        'majors': ['Urban Studies'],
-        'dates': '2008-2013',
-        'url': 'string (optional)'
-      },{
-        'name': 'Queens Coll at The City University of New York',
-        'location': 'Flushing, NY',
-        'degree': 'Bachelor of Arts',
-        'majors': ['Urban Studies'],
-        'dates': '2008-2013',
-        'url': 'string (optional)'
-      }
-      ],
-
-    'onlineCourses': [{
-        'title': 'Front End Web Developer',
-        'school': 'Udacity',
-        'dates': 'May 2017 - Present',
-        'url': 'string'
-    }],
-
-};
-
-//education function to display information
-education.display=function(){
-  for (let x = 0; x < education.schools.length; x++) {
-    $('#education').append(HTMLschoolStart);
-
-    let formattedSchoolName = HTMLschoolStart.replace('%data%', education.schools[x].name);
-   
-    let formattedDegree = HTMLschoolDegree.replace('%data%', education.schools[x].degree);
-    
-    let formattedMajors = HTMLschoolMajor.replace('%data%', education.schools[x].majors);
-    $('.education-entry:last').append(formattedMajors);
-
-    let formattedDates = HTMLschoolDates.replace('%data%', education.schools[x].dates);
-    $('.education-entry:last').append(formattedDates);
-
-
+  "schools": [
+  {
+    "name": "Queens College at The City University of New York",
+    "location": "Flushing, NY",
+    "degree": "Bachelor of Arts",
+    "majors": ["Urban Studies"],
+    "dates": 2013,
+    "url": "http://www.qc.cuny.edu/Pages/home.aspx"
+  },  
+  {
+    "name": "Queens College at The City University of New York",
+    "location": "Flushing, NY",
+    "degree": "Bachelor of Arts",
+    "majors": ["Urban Studies"],
+    "dates": 2013,
+    "url": "http://www.qc.cuny.edu/Pages/home.aspx"
   }
-  $('#education').append(HTMLonlineClasses);
-  for (let x = 0; x < education.onlineCourses.length; x++) {
-    $('#education').append(HTMLschoolStart);
-
-  let onlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[x].title);
-
-  let onlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[x].school);
-    $('.education-entry:last').append(onlineTitle + onlineSchool);
-
+ ]
+},
+  "onlineCourses": [
+    {
+    "title": "Front End Web Developer",
+    "school": "Udacity",
+    "dates": "May 2017 - Present",
+    "url": "string"
   }
+ ]
 }
-education.display();
-
-// job history information
-let work = {
-  'jobs': [{
-    'employer': 'Young Adult Institute', 
-    'title': 'Counselor',
-    'location': 'Queens, NY', 
-    'dates': 'January 2014 - August 2014',
-    'description': 'fill in later' 
-  }],
 
 
-  };
+// let work = {};
 
-work.display=function() {
-  for (x = 0; x < work.jobs.length; x++) {
-    $('#workExperience').append(HTMLworkStart);
+// work.position = "Course Developer";
+// work.employer = "Udacity";
+// work.years = 0.3;
 
-    let formattedWorkEmployer = HTMLworkEmployer.replace('%data%', work.jobs[x].employer);
+// let education = {};
+// education['name'] = 'Queens College';
+// education['years'] = '2008-2013';
+// education['city'] = 'Flushing';
 
-    let formattedWorkTitle = HTMLworkTitle.replace('%data%', )
-  }
-
-}
+// $('#main').append(work['position']);
+// $('#main').append(education.name);
 
 
