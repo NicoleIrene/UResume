@@ -17,6 +17,7 @@ var bio = {
   "biopic": "images/me.jpg",
 
 //bio function to display information
+
 display:function() {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -73,60 +74,76 @@ var education = {
   }
  ]
 };
- // education function to display edu info
+ // education function to display education info
 
 function displayEducation() {
-  for(x in education.schools) {
+  for(school in education.schools) {
 $("#education").append(HTMLschoolStart);
-var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[x].name);
-var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[x].degree);
-var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[x].majors);
-var formattedDates = HTMLschoolDates.replace("%data%", education.schools[x].dates); 
-var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[x].location);
+var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates); 
+var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 $(".education-entry:last").append(formattedSchoolName + formattedDegree);
 $(".education-entry:last").append(formattedMajors);
 $(".education-entry:last").append(formattedDates);
 $(".education-entry:last").append(formattedLocation);
-
-$("#education"),append(HTMLonlineClasses);
-  for(x in education.onlineCourses) {
-var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[x].title);
-var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[x].school);
-var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[x].dates);
-var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[x].url);
+} 
+$("#education").append(HTMLonlineClasses);
+  for(course in education.onlineCourses) {
+$("#education").append(HTMLschoolStart);
+var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
 $(".education-entry:last").append(formattedOnlineDates);
 $(".education-entry:last").append(formattedOnlineUrl);
   }
 
-  } 
  }
-displayEducation();
+displayEducation(); // end of education function
 
-// end of education function
-
-// beginning of work function 
+// work information  
 
 let work = {
   "jobs": [
   {
     "employer": "Udacity",
     "title": "Front End Web Developer",
-    "location": "NYC",
+    "location": "New York, NY",
     "dates": "2017",
     "description": "fill this in later"
   },
   {
     "employer": "Google",
     "title": "Data Analyst",
-    "location": "NYC",
+    "location": "Miami, FL",
+    "dates": "2016",
+    "description": "fill this in later"
+  },
+    {
+    "employer": "Uncubed",
+    "title": "Cyber Security Specialist",
+    "location": "Miami, FL",
     "dates": "2016",
     "description": "fill this in later"
   }
  ]
 };
 
-//beginning of work function
+function locationizer(work_obj) {
+  var locationArray = [];
+
+  for (job in work_obj.jobs) {
+    var newLocation = work_obj.jobs[job].location;
+    locationArray.push(newLocation);
+  }
+  return locationArray;
+}
+console.log(locationizer(work));
+
+//work function
 
 function displayWork() {
   for(job in work.jobs) {
@@ -147,7 +164,7 @@ $('.work-entry:last').append(formattedDescription);
 displayWork(); //end of work function 
 
 
-//beginning of projects function 
+//projects information
 
 
 let projects = {
@@ -168,8 +185,48 @@ let projects = {
  ]
 };
 
+//projects function
+projects.display = function() {
+  for (project in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedTitle);
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedDates);
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedDescription);
+    
+    if (projects.projects[project].images.length > 0){
+      for (image in projects.projects[project].images) {
+        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedImage);
+
+      }
+    }    
+
+
+  }
+}
+
+
+
+
+
+
+
 $(document).click(function(loc) {
 var x = loc.pageX;
 var y = loc.pageY;
-console.log(logClicks(x,y));
+
+logClicks(x,y);
 });
+function inName(name) {
+  name = name.trim().split(" ");
+  console.log(name);
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+  return name[0] + " "+name[1];
+}
+$("#main").append(internationalizeButton);
