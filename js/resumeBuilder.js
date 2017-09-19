@@ -27,7 +27,7 @@ var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").prepend(formattedName, formattedRole);
   $("ul#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
   $("#header").append(formattedBioPic, formattedWelcomeMsg, HTMLskillsStart);
@@ -109,19 +109,22 @@ let work = {
     "description": "fill this in later"
   }
  ]
-
 };
 
-for(job in work.jobs) {
+function displayWork() {
+  for(job in work.jobs) {
 $("#workExperience").append(HTMLworkStart);
-
-let formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-let formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-let formattedEmployerTitle = formattedEmployer + formattedTitle;
-
+var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+var formattedEmployerTitle = formattedEmployer + formattedTitle;
 $(".work-entry:last").append(formattedEmployerTitle);
-
+var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+$(".work-entry:last").append(formattedDates);
+var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
  }
+}
+
+displayWork();
 
 let projects = {
   "projects": [
