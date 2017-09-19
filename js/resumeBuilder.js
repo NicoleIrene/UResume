@@ -42,6 +42,8 @@ function bioSkills(item,index) {
 }
 bio.display(); //end of bio function
 
+//education information 
+
 var education = {
   "schools": [
   {
@@ -69,9 +71,13 @@ var education = {
     "dates": "May 2017 - Present",
     "url": "string"
   }
- ],
-display: function() {
+ ]
+};
+ // education function
 
+function displayEducation() {
+  for(x in education.schools) {
+$("#education").append(HTMLschoolStart);
 var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[x].name);
 var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[x].degree);
 var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[x].majors);
@@ -89,8 +95,13 @@ var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses
 $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
 $(".education-entry:last").append(formattedOnlineDates);
 $(".education-entry:last").append(formattedOnlineUrl);
- } 
-};
+  } 
+ }
+displayEducation();
+
+// end of education function
+
+// beginning of work function 
 
 let work = {
   "jobs": [
@@ -111,20 +122,29 @@ let work = {
  ]
 };
 
+//beginning of work function
+
 function displayWork() {
   for(job in work.jobs) {
 $("#workExperience").append(HTMLworkStart);
 var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+$(".work-entry:last").append(formattedWorkLocation);
 var formattedEmployerTitle = formattedEmployer + formattedTitle;
 $(".work-entry:last").append(formattedEmployerTitle);
 var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 $(".work-entry:last").append(formattedDates);
 var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+$('.work-entry:last').append(formattedDescription); 
  }
 }
 
-displayWork();
+displayWork(); //end of work function 
+
+
+//beginning of projects function 
+
 
 let projects = {
   "projects": [
@@ -143,3 +163,9 @@ let projects = {
   }
  ]
 };
+
+$(document).click(function(loc) {
+var x = loc.pageX;
+var y = loc.pageY;
+console.log(logClicks(x,y));
+});
