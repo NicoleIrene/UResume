@@ -73,7 +73,7 @@ var education = {
   }
  ]
 };
- // education function
+ // education function to display edu info
 
 function displayEducation() {
   for(x in education.schools) {
@@ -88,6 +88,8 @@ $(".education-entry:last").append(formattedMajors);
 $(".education-entry:last").append(formattedDates);
 $(".education-entry:last").append(formattedLocation);
 
+$("#education"),append(HTMLonlineClasses);
+  for(x in education.onlineCourses) {
 var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[x].title);
 var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[x].school);
 var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[x].dates);
@@ -95,6 +97,8 @@ var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses
 $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
 $(".education-entry:last").append(formattedOnlineDates);
 $(".education-entry:last").append(formattedOnlineUrl);
+  }
+
   } 
  }
 displayEducation();
