@@ -9,7 +9,7 @@ var bio = {
         "twitter": "@NicoleIrene",
         "location": "New York City"
     },
-    "welcomeMessage": "Some days, you just have to create your own sunshine.",
+    "welcomeMessage": "Passionate, motivated and hard working front end web developer.",
     "skills": [
         "HTML5", "CSS3", "JavaScript", "Wordpress"
     ],
@@ -58,7 +58,7 @@ var bio = {
             $("#header").append(HTMLskillsStart);
 
             for (x = 0; x < bio.skills.length; x++) {
-                var formattedSkills = HTMLskills.replace("%data", bio.skills[x]);
+                var formattedSkills = HTMLskills.replace("%data%", bio.skills[x]);
                 $("#skills").append(formattedSkills);
             }
         }
