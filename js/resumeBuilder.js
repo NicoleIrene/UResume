@@ -244,7 +244,7 @@ projects.display();
 function locationizer(work_obj) {
   var locationArray = [];
 
-  for (job in work_obj.jobs) {
+  for (job = 0; job < work_obj.jobs.length; job++) {
     var newLocation = work_obj.jobs[job].location;
     locationArray.push(newLocation);
   }
