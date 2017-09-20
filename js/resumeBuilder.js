@@ -189,7 +189,7 @@ var work = {
 
 //Project Information-------------------
 
-let projects = {
+var projects = {
   "projects": [
   {
     "title": "Project 1",
