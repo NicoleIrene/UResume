@@ -57,7 +57,7 @@ var bio = {
         if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
 
-            for (x = 0; x < bio.skills.length; x++) {
+            for (var x = 0; x < bio.skills.length; x++) {
                 var formattedSkills = HTMLskills.replace("%data%", bio.skills[x]);
                 $("#skills").append(formattedSkills);
             }
@@ -95,7 +95,7 @@ var education = {
     // Education Function--------------------
 
     "display": function() {
-        for (x = 0; x < education.schools.length; x++) {
+        for (var x = 0; x < education.schools.length; x++) {
             $("#education").append(HTMLschoolStart);
 
             var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[x].name);
@@ -112,7 +112,7 @@ var education = {
             var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[x].location);
             $(".education-entry:last").append(formattedLocation);
         }
-        for (x = 0; x < education.onlineCourses.length; x++) {
+        for (var x = 0; x < education.onlineCourses.length; x++) {
             $("#education").append(HTMLonlineClasses);
             $("#education").append(HTMLschoolStart);
 
@@ -159,7 +159,7 @@ var work = {
     //Work Function-----------------------
 
     "display": function() {
-        for (x = 0; x < work.jobs.length; x++) {
+        for (var x = 0; x < work.jobs.length; x++) {
             $("#workExperience").append(HTMLworkStart);
 
             var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[x].employer);
@@ -203,7 +203,7 @@ var projects = {
     //Project Function--------------------
 
     "display": function() {
-        for (x = 0; x < projects.projects.length; x++) {
+        for (var x = 0; x < projects.projects.length; x++) {
             $("#projects").append(HTMLprojectStart);
 
             var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[x].title);
@@ -238,7 +238,7 @@ projects.display();
 function locationizer(work_obj) {
     var locationArray = [];
 
-    for (job = 0; job < work_obj.jobs.length; job++) {
+    for (var job = 0; job < work_obj.jobs.length; job++) {
         var newLocation = work_obj.jobs[job].location;
         locationArray.push(newLocation);
     }
