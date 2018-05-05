@@ -233,19 +233,6 @@ education.display();
 work.display();
 projects.display();
 
-// //Calling work Locations for Google Map------
-
-// function locationizer(work_obj) {
-//     var locationArray = [];
-
-//     for (var job = 0; job < work_obj.jobs.length; job++) {
-//         var newLocation = work_obj.jobs[job].location;
-//         locationArray.push(newLocation);
-//     }
-
-//     return locationArray;
-// }
-// $('#mapDiv').append(googleMap);
 
 // Internationalize resume button-------
 
