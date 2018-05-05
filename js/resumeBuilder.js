@@ -25,7 +25,7 @@ var bio = {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         $("#header").prepend(formattedRole);
 
-        var formattedMobile = HTMLmobile.replace("mobile", bio.contacts.mobile);
+        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
         $("#topContacts").append(formattedMobile);
         $("#footerContacts").append(formattedMobile);
 
