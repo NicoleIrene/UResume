@@ -3,10 +3,10 @@ var bio = {
     "name": "Nicole Irene",
     "role": "Front End Gladiator",
     "contacts": {
-        "mobile": "718-555-5555",
+        "mobile": "917-250-4598",
         "email": "nicoleirene89@gmail.com",
         "github": "github.com/NicoleIrene",
-        "twitter": "@NicoleIrene",
+        "twitter": "@swtbrwngrl",
         "location": "New York City"
     },
     "welcomeMessage": "Passionate, motivated and hard working front end web developer.",
@@ -25,7 +25,7 @@ var bio = {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         $("#header").prepend(formattedRole);
 
-        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+        var formattedMobile = HTMLmobile.replace("mobile", bio.contacts.mobile);
         $("#topContacts").append(formattedMobile);
         $("#footerContacts").append(formattedMobile);
 
