@@ -76,14 +76,6 @@ var education = {
             "dates": "2013",
             "url": "http://www.qc.cuny.edu/Pages/home.aspx"
         },
-        {
-            "name": "Queens College at The City University of New York",
-            "location": "Flushing, NY",
-            "degree": "Bachelor of Arts",
-            "majors": ["Urban Studies"],
-            "dates": "2013",
-            "url": "http://www.qc.cuny.edu/Pages/home.aspx"
-        }
     ],
 
     "onlineCourses": [{

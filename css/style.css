@@ -1,4 +1,4 @@
-body,
+body/*,
 div,
 ul,
 li,
@@ -8,7 +8,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6 */{
     padding: 0;
     margin: 0;
     font-family: "Roboto", sans-serif;
@@ -25,7 +25,7 @@ h6 {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 30px;
     color: #2CE;
     line-height: 48px;
     display: inline;
@@ -60,20 +60,16 @@ h5 {
     padding: 10px 5%;
 }
 
+#topContacts{
+    font-size: 10px;
+}
+
 .date-text {
     font-style: italic;
     font-size: 14px;
     color: #999;
     line-height: 16px;
     float: left;
-}
-
-.location-text {
-    font-style: italic;
-    font-size: 14px;
-    color: #999;
-    line-height: 16px;
-    float: right;
 }
 
 p {
@@ -101,12 +97,12 @@ a {
     display: none;
 }
 
-.orange {
-    background-color: #2CE;
+.buildbar {
+    background-color: #FFB6C1;
 }
 
-.orange-text {
-    color: #2CE;
+.buildbar-text {
+    color: #FFB6C1;
 }
 
 .white-text {
@@ -124,9 +120,8 @@ a {
     background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
 #header {
-    background-color: #CEE;
+    background-color: #FFB6C1;
 }
 
 .flex-box {
